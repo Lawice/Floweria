@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c4bb6f99b6cd754499cd75633f4474ed
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Projectile: {fileID: 6204635500223147353, guid: 9a2b9a1e1ebc28a46beaf2bde522ca43, type: 3}
+  - Shot: {fileID: -8277422982394343384, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  - Aim: {instanceID: 0}
+  - MousePos: {fileID: 8182202940345501956, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

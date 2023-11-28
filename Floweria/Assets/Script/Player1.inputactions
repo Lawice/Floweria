@@ -2,7 +2,7 @@
     "name": "Player1",
     "maps": [
         {
-            "name": "Mouvement",
+            "name": "Player",
             "id": "e2195d28-6b61-49b4-8a4b-9dcff2c68b7a",
             "actions": [
                 {
@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "8eadf1cd-f7b2-4d53-8111-3d671678ca22",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mouse",
+                    "type": "Value",
+                    "id": "38de17f7-4e37-41e5-8842-40e2cb7a058f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -64,6 +82,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1de6ae15-163b-45dc-adb4-0786ed930cb9",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f991ead-6100-4ef2-8559-5bad93d81d60",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
