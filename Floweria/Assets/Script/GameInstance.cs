@@ -13,7 +13,7 @@ public class GameInstance : MonoBehaviour{
 
     [Header("Timer")]
     public float turn_time;
-    [SerializeField] private float max_time = 10;
+    [SerializeField] private float max_time = 15;
 
     [Header("Caméra")]
     private GameObject following_member;
@@ -55,6 +55,7 @@ public class GameInstance : MonoBehaviour{
     private void Run_timer() {
         turn_time -= 1 * Time.fixedDeltaTime;
         if (turn_time <=0){
+            print("END");
             End_turn();
         }
     }
@@ -75,7 +76,7 @@ public class GameInstance : MonoBehaviour{
         Random_wind();
         Random_gravity();
         Restart_timer();
-        if (Get_member()==null){
+        if (Get_member()!=null){
             Change_member();
         }
     }

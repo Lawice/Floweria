@@ -1101,7 +1101,7 @@ MonoBehaviour:
   nb_player: 0
   member: {fileID: 0}
   turn_time: 0
-  max_time: 10
+  max_time: 15
   wind: {x: 0, y: 0}
   gravity: {x: 0, y: 0}
 --- !u!4 &1666484794

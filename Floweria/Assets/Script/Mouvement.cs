@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 
     private void Update() {
         Turn_check();
-        if (myturn) {
+        if (!myturn) {
             return; 
         } else {
             if (Left.action.inProgress) {
