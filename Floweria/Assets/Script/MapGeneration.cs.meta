@@ -6,6 +6,7 @@ MonoImporter:
   defaultReferences:
   - dirt: {fileID: 8809619958647757401, guid: 33280a5dcf9c09a44833f629a3ce33c3, type: 3}
   - grass: {fileID: 8809619958647757401, guid: f6643cbca64b87e408c644716fc7bd68, type: 3}
+  - bedrock: {fileID: 8809619958647757401, guid: 307e72f94ffbddd438c04b017610cb6f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,20 +10,26 @@ public class Player : MonoBehaviour {
     private bool grounded;
 
     [SerializeField] private InputActionReference Left, Right, Up;
+    private bool myturn = false;
 
     private void Awake() {
         body = GetComponent<Rigidbody2D>();
     }
 
     private void Update() {
-        if (Left.action.inProgress) {
-            body.velocity = new Vector2(-speed, body.velocity.y);
-        }
-        if (Right.action.inProgress) {
-            body.velocity = new Vector2(speed, body.velocity.y);
-        }
-        if (Up.action.inProgress && grounded) {
-            Jump();
+        Turn_check();
+        if (myturn) {
+            return; 
+        } else {
+            if (Left.action.inProgress) {
+                body.velocity = new Vector2(-speed, body.velocity.y);
+            }
+            if (Right.action.inProgress) {
+                body.velocity = new Vector2(speed, body.velocity.y);
+            }
+            if (Up.action.inProgress && grounded) {
+                Jump();
+            }
         }
     }
 
@@ -36,6 +42,10 @@ public class Player : MonoBehaviour {
         if (collision.gameObject.tag == "Ground") {
             grounded = true;
         }
+    }
+
+    private void Turn_check(){
+        myturn = (GameObject.Find("Game").GetComponent<GameInstance>().member == this.gameObject);
     }
 }
 

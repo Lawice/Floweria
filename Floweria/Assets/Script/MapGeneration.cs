@@ -7,32 +7,54 @@ public class MapGeneration : MonoBehaviour {
     [SerializeField] int width;
     [SerializeField] int  height, minheight, maxheight;
     [SerializeField] int variation;
-    [SerializeField] int repeatNum;
-    [SerializeField] GameObject dirt, grass;
+    [SerializeField] int repeating;
+    [SerializeField] GameObject dirt, grass,bedrock;
     void Start() {
+        WallGeneration();
         Generation();
     }
 
+    void WallGeneration() {
+        int xx = startx-15;
+        height = maxheight + 20;
+        for (int x2= xx; x2<startx+1;x2++) {
+            Generate(x2);
+        }
+        int xxx = width+15;
+        height = maxheight + 20;
+        for (int x3= xxx; x3>width-1;x3--) {
+            Generate(x3);
+        }
+    }
+
     void Generation() {
-        int repeatValue = 0;
+        int repeat = 0;
         height = Random.Range(minheight, maxheight);
-        for (int x = startx; x < width; x++) {
-            if (repeatValue == 0) {
+        for (int x = startx+1; x < width; x++) {
+            if (repeat == 0) {
                 height = Random.Range(Mathf.Clamp(height - variation, minheight, maxheight), Mathf.Clamp(height + variation, minheight, maxheight));
                 Generate(x);
-                repeatValue = repeatNum;
+                repeat = repeating;
             } else {
                 Generate(x);
-                repeatValue--;
+                repeat--;
             }
         }
     }
 
     void Generate(int x) {
-        for (int y = starty; y < height; y++) {
-            Spawn(dirt, x, y);
+        if (x <= startx || x >= width) {
+            for (int y = starty; y < height; y++) {
+                Spawn(bedrock, x, y);
+                Spawn(bedrock, x, starty - 1);
+            }
+        } else {
+            Spawn(bedrock, x, starty - 1);
+            for (int y = starty; y < height; y++) {
+                Spawn(dirt, x, y);
+            }
+            Spawn(grass, x, height);
         }
-        Spawn(grass, x, height);
     }
 
 
