@@ -7,17 +7,24 @@ public class Shoot : MonoBehaviour {
     [SerializeField] private InputActionReference Shot, MousePos, Scroll;
     private Vector2 mouse_pos; 
     [SerializeField] private GameObject Projectile;
-    [SerializeField] private float force = 0f;
+    [SerializeField] public float force = 0f;
     private bool myturn = false;
     Transform Player;
+    Powerbar powerbar;
     void Start() {
         Player = transform;
     }
 
+    void Update (){
+        Turn_check();
+        if (!myturn) {
+            force = 0; 
+        }
+    }
     public void Charging(InputAction.CallbackContext ctx){
         Turn_check();
         if (!myturn) {
-            return; 
+            return;
         } else {
             float scroll_amount = ctx.ReadValue<float>();
             int scrolling = 0;
@@ -27,8 +34,7 @@ public class Shoot : MonoBehaviour {
                 scrolling = -1;
             }
             force += scrolling;
-            force=Mathf.Clamp(force,0, 50);
-            print(force);
+            force = Mathf.Clamp(force,0, 50);
         }
     }
     

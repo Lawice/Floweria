@@ -7,7 +7,7 @@ public class GameInstance : MonoBehaviour{
     private GameObject GUI;
 
     [Header("Players & Turn")]
-    public int nb_player;
+    [SerializeField] public int nb_player;
     public GameObject member;
     private string member_turn = "Red Bush";
 
@@ -55,7 +55,6 @@ public class GameInstance : MonoBehaviour{
     private void Run_timer() {
         turn_time -= 1 * Time.fixedDeltaTime;
         if (turn_time <=0){
-            print("END");
             End_turn();
         }
     }

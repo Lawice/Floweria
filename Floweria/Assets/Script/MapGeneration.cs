@@ -15,12 +15,12 @@ public class MapGeneration : MonoBehaviour {
     }
 
     void WallGeneration() {
-        int xx = startx-15;
+        int xx = startx-10;
         height = maxheight + 20;
         for (int x2= xx; x2<startx+1;x2++) {
             Generate(x2);
         }
-        int xxx = width+15;
+        int xxx = width+10;
         height = maxheight + 20;
         for (int x3= xxx; x3>width-1;x3--) {
             Generate(x3);
@@ -46,10 +46,14 @@ public class MapGeneration : MonoBehaviour {
         if (x <= startx || x >= width) {
             for (int y = starty; y < height; y++) {
                 Spawn(bedrock, x, y);
-                Spawn(bedrock, x, starty - 1);
+                for (int u = starty-1; u > starty- 7; u--) {
+                    Spawn(bedrock, x, u);
+                }
             }
         } else {
-            Spawn(bedrock, x, starty - 1);
+            for (int u = starty-1; u > starty- 7; u--) {
+                    Spawn(bedrock, x, u);
+                }
             for (int y = starty; y < height; y++) {
                 Spawn(dirt, x, y);
             }
