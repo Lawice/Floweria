@@ -4,13 +4,22 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player2Mouvement : MonoBehaviour {
+    
+    [Header("2nd Player")]
     private bool player2;
-    private Rigidbody2D body;
     [SerializeField] private float speed;
     [SerializeField] private float jump;
-    private bool grounded;
     [SerializeField] private InputActionReference Left, Right, Up;
-    [SerializeField] private bool myturn = false;
+    
+    [Header("Commun Variables")]
+    private bool grounded; 
+    private bool myturn = false;
+    private Rigidbody2D body;
+
+    [Header("IA")]
+    private enum State {Idle, SimuShoot, Move, Dig}
+
+
 
     private void Awake() {
         player2 = (GameObject.Find("Game").GetComponent<GameInstance>().nb_player == 2);
@@ -18,12 +27,10 @@ public class Player2Mouvement : MonoBehaviour {
         body = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update(){
         if (player2) {
             Turn_check();
             if (!myturn) {
-                print(myturn);
                 return; 
             } else {
                 if (Left.action.inProgress) {
@@ -35,6 +42,13 @@ public class Player2Mouvement : MonoBehaviour {
                 if (Up.action.inProgress && grounded) {
                     Jump();
                 }
+            }
+        } else {
+            Turn_check();
+            if (!myturn) {
+                return;
+            } else {
+
             }
         }
     }
@@ -51,6 +65,6 @@ public class Player2Mouvement : MonoBehaviour {
     }
 
     private void Turn_check(){
-        myturn = (GameObject.Find("Game").GetComponent<GameInstance>().member == this.gameObject);
+        myturn = (GameObject.Find("Game").GetComponent<GameInstance>().member == this.gameObject); 
     }
 }
