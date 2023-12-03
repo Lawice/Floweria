@@ -16,8 +16,10 @@ public class Player2Mouvement : MonoBehaviour {
     private bool myturn = false;
     private Rigidbody2D body;
 
-    [Header("IA")]
-    private enum State {Idle, SimuShoot, Move, Dig}
+   //[Header("CPU")]
+   
+   // private enum State {Idle, SimuShoot,Soot, Move, Dig}
+    //private State state = State.Idle; 
 
 
 

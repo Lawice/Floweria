@@ -43,8 +43,8 @@ public class GameInstance : MonoBehaviour{
     }
 
     private void Random_gravity() {
-        float gravity_force = UnityEngine.Random.Range(-2, 4);
-        gravity = new Vector2(0,gravity_force);
+        float gravity_force = UnityEngine.Random.Range(-1, 4);
+        gravity = new Vector2(0,-9.80665f*gravity_force);
     }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||Timer||~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

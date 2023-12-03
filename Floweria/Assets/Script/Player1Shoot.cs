@@ -21,6 +21,7 @@ public class Shoot : MonoBehaviour {
             force = 0; 
         }
     }
+    
     public void Charging(InputAction.CallbackContext ctx){
         Turn_check();
         if (!myturn) {
