@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Low
+  m_Name: Low2
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -30,7 +30,7 @@ AnimationClip:
       value: {fileID: 790055372, guid: 801074180e6563e4cad189f7b036d988, type: 3}
     - time: 0.26666668
       value: {fileID: -540833631, guid: 801074180e6563e4cad189f7b036d988, type: 3}
-    - time: 0.35
+    - time: 0.33333334
       value: {fileID: 1060365125, guid: 801074180e6563e4cad189f7b036d988, type: 3}
     - time: 0.4
       value: {fileID: 1556446872, guid: 801074180e6563e4cad189f7b036d988, type: 3}
