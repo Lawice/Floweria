@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6777957417601907244}
   m_Layer: 0
   m_Name: projectile_player_1
-  m_TagString: Player1ball
+  m_TagString: Redflow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

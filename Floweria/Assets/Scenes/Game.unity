@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: edb100941b0240e41a5b796a5a04bc39, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.44
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1417,9 +1417,12 @@ GameObject:
   - component: {fileID: 1820239713}
   - component: {fileID: 1820239712}
   - component: {fileID: 1820239714}
+  - component: {fileID: 1820239715}
+  - component: {fileID: 1820239717}
+  - component: {fileID: 1820239716}
   m_Layer: 7
   m_Name: Blue Bush
-  m_TagString: Untagged
+  m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1548,21 +1551,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1820239711
-Transform:
+--- !u!224 &1820239711
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820239704}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.5, y: 17.86, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 56.5, y: 17.86}
+  m_SizeDelta: {x: 1.65, y: 1.65}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820239712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,11 +1629,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3383e2427c766be48bb793fd47a9c716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shot: {fileID: -8277422982394343384, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  MousePos: {fileID: 8182202940345501956, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  Scroll: {fileID: -234589075826271743, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  flowers: {fileID: 0}
+  force: 0
+--- !u!114 &1820239715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820239704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff7dcd62558345745828b276f6c0b800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1820239716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820239704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473de5c22329a944aae5345e2c94b1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   flowers: {fileID: 6204635500223147353, guid: a665408682d02ca4e900cb624ad82fc8, type: 3}
   angle: 0
   nb_simu: 60
   max_force: 15
   rand_angle: 15
+--- !u!222 &1820239717
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820239704}
+  m_CullTransparentMesh: 1
 --- !u!1 &1935780659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,9 +1792,10 @@ GameObject:
   - component: {fileID: 1972561241}
   - component: {fileID: 1972561242}
   - component: {fileID: 1972561243}
+  - component: {fileID: 1972561244}
   m_Layer: 6
   m_Name: Red Bush
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2019,6 +2064,18 @@ MonoBehaviour:
   Scroll: {fileID: -7879674487534101653, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
   Projectile: {fileID: 6204635500223147353, guid: 9a2b9a1e1ebc28a46beaf2bde522ca43, type: 3}
   force: 0
+--- !u!114 &1972561244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972561236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c05692521a148d4abe1868009e948f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2019499024
 GameObject:
   m_ObjectHideFlags: 0

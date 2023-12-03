@@ -3,7 +3,11 @@ guid: 3383e2427c766be48bb793fd47a9c716
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Shot: {fileID: -8277422982394343384, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  - MousePos: {fileID: 8182202940345501956, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  - Scroll: {fileID: -234589075826271743, guid: 33f2e7fb261d35247a83d029257869f3, type: 3}
+  - flowers: {fileID: 6204635500223147353, guid: a665408682d02ca4e900cb624ad82fc8, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -11,6 +11,7 @@ public class Shoot : MonoBehaviour {
     private bool myturn = false;
     Transform Player;
     Powerbar powerbar;
+    
     void Start() {
         Player = transform;
     }

@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Player1ball
+  - Ennemy
+  - Redflow
+  - Blueflow
   layers:
   - Default
   - TransparentFX

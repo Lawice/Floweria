@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6777957417601907244}
   m_Layer: 0
   m_Name: projectile_player2
-  m_TagString: Player1ball
+  m_TagString: Blueflow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
