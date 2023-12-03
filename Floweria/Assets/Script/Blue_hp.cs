@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlueHP : MonoBehaviour{
     private Animator animator;
@@ -12,7 +13,10 @@ public class BlueHP : MonoBehaviour{
         if (collision.CompareTag("Redflow")) {
             Destroy(collision.gameObject);
             ennemy_hp -= 1;
-            print(ennemy_hp);
+            if(ennemy_hp < 0)
+            {
+                SceneManager.LoadSceneAsync("EndMenuRed");
+            }
             animator.SetInteger("Life2", ennemy_hp);
         }
     }
