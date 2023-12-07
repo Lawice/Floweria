@@ -156,6 +156,7 @@ public class Player2Shoot : MonoBehaviour {
         GameObject newprojectile = Instantiate(flowers, Player.position, Quaternion.identity);
         newprojectile.TryGetComponent<Rigidbody2D>(out Rigidbody2D tempbody);
         tempbody.velocity = shootvector * 1.008f;
+        state = State.Idle;
     }
 
     private void Turn_check(){
